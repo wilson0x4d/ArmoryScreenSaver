@@ -1,0 +1,85 @@
+﻿<Window x:Class="SEWilson.ScreenSaver.SaverWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ext="clr-namespace:System.Windows.Extensions"
+    xmlns:armory="clr-namespace:SEWilson.ScreenSaver.TheArmory.UI"
+        BorderThickness="0"
+        Title="" 
+        Width="1024" 
+        Height="768" 
+        Background="Black" 
+        WindowState="Normal"
+        WindowStartupLocation="CenterScreen"
+        ShowInTaskbar="False"
+        ResizeMode="NoResize"
+        WindowStyle="None">
+    <ext:WindowChrome.WindowChrome>
+        <ext:WindowChrome 
+            CaptionHeight="0" 
+            ClientBorderThickness="0" 
+            RoundCorners="False"
+            UseGlassFrame="False"
+            />
+    </ext:WindowChrome.WindowChrome>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="278*" />
+            <ColumnDefinition Width="446" />
+            <ColumnDefinition Width="278*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="48" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <MediaElement Name="mediaElement1" Grid.ColumnSpan="3"
+                      MediaEnded="mediaElement1_MediaEnded"
+                      MediaFailed="mediaElement1_MediaFailed" Grid.Row="1" Margin="0,0,0,0" 
+                      Stretch="Uniform" Volume="0" MediaOpened="mediaElement1_MediaOpened" />
+        <Image Name="imageBackground" Grid.ColumnSpan="3" Stretch="Uniform" Grid.Row="1" Margin="0,0,0,0" />
+        <Rectangle Margin="1,1,-1,0" Height="48" Grid.RowSpan="2" VerticalAlignment="Top" Grid.ColumnSpan="3">
+            <Rectangle.Fill>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop Color="Tan" Offset="0" />
+                    <GradientStop Color="Transparent" Offset="1" />
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Label BorderBrush="Gray" BorderThickness="4,1,4,1" FontWeight="Bold" Foreground="Black" Background="#222222" Height="25" HorizontalContentAlignment="Center" Name="label1" Margin="0,0,0,32" VerticalAlignment="Bottom" Grid.Row="1" Grid.Column="1">Press ESC to Exit</Label>
+        <Label Foreground="RoyalBlue" FontWeight="Bold" Height="25" Margin="0,0,0,33" Name="labelHint" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" Grid.Row="1" Grid.Column="1">Press ESC to Exit</Label>
+        <Button Height="12" HorizontalAlignment="Right" Name="buttonCloseWindow" VerticalAlignment="Top" Width="11" FontSize="5" FontWeight="Bold" IsCancel="True" Click="buttonCloseWindow_Click" BorderThickness="0" FontFamily="Arial" BorderBrush="Transparent" Background="Transparent" Foreground="Red" ToolTip="Exit Screen Saver" Focusable="False" Margin="0,-1,-1,0" Grid.Column="2">x</Button>
+        <Canvas Height="69" Name="canvas1" Margin="0,10,16,0" Grid.RowSpan="2" VerticalAlignment="Top" Grid.Column="2" HorizontalAlignment="Right" Width="199.541">
+            <Image Height="43" Name="image3" Source="/wowarmory;component/armory_promo.png" Stretch="Fill" Width="175" Canvas.Left="19" Canvas.Top="6" />
+            <TextBlock Opacity="0.66" FontFamily="Trebuchet" FontSize="21" FontWeight="Bold" Foreground="White" Height="56" Name="textBlock1" Text="screen saver" Width="128" Canvas.Left="66" Canvas.Top="45" />
+            <TextBlock Opacity="0.66" FontFamily="Trebuchet" FontSize="21" FontWeight="Bold" Foreground="White" Height="32" Name="textBlock2" Text="screen saver" Width="129" Canvas.Left="66" Canvas.Top="43" />
+            <TextBlock Opacity="1" FontFamily="Trebuchet" FontSize="21" FontWeight="Bold" Foreground="Black" Height="31" Name="textBlock4" Text="screen saver" Width="129" Canvas.Left="65" Canvas.Top="44" />
+        </Canvas>
+        <armory:CharacterSheetControl
+            DataContext="{Binding listCharacterSheets.SelectedItem}"
+            Visibility="Hidden"
+            Grid.Column="1" Margin="9,7,11,0" Grid.Row="1" Height="533" VerticalAlignment="Top" x:Name="characterSheetControl">
+        </armory:CharacterSheetControl>
+        <Button Grid.Row="1" Name="buttonRedX" Grid.Column="1" Height="26" HorizontalAlignment="Right" VerticalAlignment="Top" Width="26" Margin="0,23,13,0" Opacity="0" Click="buttonRedX_Click" ToolTip="Close Character Sheet">Button</Button>
+        <Label Grid.Column="2" Grid.Row="1" Height="Auto" Margin="0,0,21.541,32" 
+               Name="label2" FontSize="14"
+               VerticalAlignment="Bottom"
+               HorizontalAlignment="Right"
+               HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+               Foreground="#222222" Width="Auto"
+               MouseUp="label2_MouseUp" ToolTip="Click Here to Skip a Video">∞</Label>
+        <CheckBox Foreground="Chartreuse" 
+                  Grid.Row="1" Height="Auto" Margin="22,0,136,26" 
+                  Name="checkMuteAudio" IsChecked="True" 
+                  VerticalAlignment="Bottom"
+                  HorizontalAlignment="Left"
+                  Checked="checkBox1_Checked"
+                  Unchecked="checkBox1_Unchecked">Mute</CheckBox>
+        <TextBlock Grid.Column="2" Grid.Row="1" Height="21" Margin="6,0,49,33" Name="textBlock3" VerticalAlignment="Bottom" Text="{Binding mediaElement1}" />
+        <ListBox Name="listCharacterSheets" ItemsSource="{Binding}" BorderThickness="0" Foreground="White" Background="Transparent" SelectionMode="Single" Padding="8" Grid.Column="2" HorizontalContentAlignment="Right" Margin="0,69,12,66" Grid.Row="1" HorizontalAlignment="Right" Width="260">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <armory:CharacterInfoMiniViewer />
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</Window>

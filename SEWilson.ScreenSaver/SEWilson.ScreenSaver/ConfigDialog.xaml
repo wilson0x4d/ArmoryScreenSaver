@@ -1,0 +1,40 @@
+﻿<Window x:Class="SEWilson.ScreenSaver.ConfigDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Shaan's Screen Saver - Add Character" Height="348" Width="401">
+    <Grid>
+        <Image Name="image1" Stretch="Fill" Source="/wowarmory;component/blizz_promo.png" Height="310" VerticalAlignment="Top" />
+        <Canvas Margin="22,91,0,0" Name="canvas1" Height="219" VerticalAlignment="Top">
+            <Canvas.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop Color="Tan" Offset="0" />
+                    <GradientStop Color="White" Offset="0.1" />
+                    <GradientStop Color="White" Offset="0.9" />
+                    <GradientStop Color="Tan" Offset="1" />
+                </LinearGradientBrush>
+            </Canvas.Background>
+            <ComboBox Canvas.Left="15" Canvas.Top="29" Height="23" Name="comboRealmSelection" Width="330" />
+            <Label Height="25" FontWeight="Bold" Canvas.Left="15" Canvas.Top="7" Width="342">Realm Selection</Label>
+            <Label FontWeight="Bold" Height="26" Canvas.Left="15" Canvas.Top="56" Width="342">Character Name</Label>
+            <TextBox Height="23" Name="textCharacterName" Canvas.Left="15" Canvas.Top="78" Width="330" />
+            <Label Canvas.Left="15" Canvas.Top="103" FontWeight="Bold" Height="26" Width="342">Backgrounds (Screenshots &amp; Videos)</Label>
+            <Label Canvas.Left="15" Canvas.Top="127" Height="23" Name="labelBackgroundsFolder" Width="299" FontSize="10" BorderBrush="Black" BorderThickness="1" Background="White">C:\Program Files\World of Warcraft\Screenshots\</Label>
+            <Button Name="buttonBrowse" Canvas.Left="320" Canvas.Top="127" Height="23" IsDefault="True" Width="25" Click="buttonBrowse_Click">...</Button>
+            <TextBox Canvas.Left="15" Canvas.Top="127" Height="23" Name="textBackgroundsPath" Width="330" />
+            <CheckBox Canvas.Left="15" Canvas.Top="156" Height="16" Name="checkDisablePeerNetwork" Width="330"
+                      ToolTip="Release 1.0.34 addded P2P Sharing of Character Infos, this option disables that feature."
+                      Checked="checkDisablePeerNetwork_Checked"
+                      Unchecked="checkDisablePeerNetwork_Checked"
+                      >Disable Peer Network</CheckBox>
+        </Canvas>
+        <Image Margin="22,78,0,0" Name="image2" Stretch="Fill" Source="/wowarmory;component/blizz_bar.png" Height="13.81" VerticalAlignment="Top" />
+        <Image Margin="0,20,9,0" Name="image3" Stretch="Fill" Source="/wowarmory;component/armory_promo.png" Height="43" VerticalAlignment="Top" HorizontalAlignment="Right" Width="175" />
+        <TextBlock FontFamily="Trebuchet" FontSize="21" FontWeight="Bold" Foreground="Orange" HorizontalAlignment="Right" Margin="0,55,8,0" Name="textBlock2" Text="screen saver" Width="129" Height="60" VerticalAlignment="Top" />
+        <TextBlock FontFamily="Trebuchet" FontSize="21" FontWeight="Bold" Foreground="Black" Height="31" HorizontalAlignment="Right" Margin="0,56,8,0" Name="textBlock4" Text="screen saver" VerticalAlignment="Top" Width="130" />
+        <TextBlock FontFamily="Trebuchet" FontSize="21" FontWeight="Bold" Foreground="Orange" Height="37.81" HorizontalAlignment="Right" Margin="0,5,-36,0" Name="textBlock1" Text="Shaan's" VerticalAlignment="Top" Width="129" />
+        <TextBlock FontFamily="Trebuchet" FontSize="21" FontWeight="Bold" Foreground="Black" Height="31" HorizontalAlignment="Right" Margin="0,4,12,0" Name="textBlock3" Text="Shaan's" VerticalAlignment="Top" Width="82" />
+        <Button Width="69" Height="25" IsDefault="True" Click="Button_Click_1" HorizontalAlignment="Right" Margin="0,0,12,12" VerticalAlignment="Bottom">Save</Button>
+        <Button Height="25" Width="69" IsCancel="True" Click="Button_Click" HorizontalAlignment="Right" Margin="0,0,87,12" VerticalAlignment="Bottom">Cancel</Button>
+        <Button Height="25" IsCancel="True" Width="69" ToolTip="Click here to Reset the Character Sheet List in the Screen Saver" Click="Button_Click_2" HorizontalAlignment="Left" Margin="37,0,0,12" VerticalAlignment="Bottom">Reset Data</Button>
+    </Grid>
+</Window>

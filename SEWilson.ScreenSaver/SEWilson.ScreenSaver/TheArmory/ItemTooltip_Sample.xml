@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/layout/item-tooltip.xsl"?>
+<page globalSearch="1" lang="en_us" requestQuery="i=19597" requestUrl="/item-tooltip.xml">
+  <itemTooltips>
+    <itemTooltip>
+      <id>19597</id>
+      <name>Dryad's Wrist Bindings</name>
+      <icon>inv_bracer_13</icon>
+      <overallQualityId>4</overallQualityId>
+      <bonding>1</bonding>
+      <classId>4</classId>
+      <equipData>
+        <inventoryType>9</inventoryType>
+        <subclassName>Cloth</subclassName>
+      </equipData>
+      <damageData/>
+      <bonusIntellect>6</bonusIntellect>
+      <bonusSpirit>5</bonusSpirit>
+      <bonusStamina>6</bonusStamina>
+      <armor armorBonus="0">35</armor>
+      <durability current="0" max="35"/>
+      <requiredLevel>40</requiredLevel>
+      <spellData>
+        <spell>
+          <trigger>1</trigger>
+          <desc>Increases spell power by 16.</desc>
+        </spell>
+      </spellData>
+      <itemSource value="sourceType.vendor"/>
+    </itemTooltip>
+  </itemTooltips>
+</page>
