@@ -23,22 +23,5 @@ namespace SEWilson.ScreenSaver
         {
             InitializeComponent();
         }
-
-        protected override void OnInitialized(EventArgs e)
-        {
-            base.OnInitialized(e);
-
-            // quick and dirty method of getting the user to authorize the service when windows firewall is enabled
-            try
-            {
-                P2P.PeerDiscoveryService.Start();
-                P2P.CharacterFeedService characterFeedService = new SEWilson.ScreenSaver.P2P.CharacterFeedService();
-                characterFeedService.CreateChannel().Advertise("Thunderlord", "Shaan");
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex.Message + "|" + ex.StackTrace);
-            }
-        }
     }
 }
