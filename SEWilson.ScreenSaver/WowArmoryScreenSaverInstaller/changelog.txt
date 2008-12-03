@@ -4,7 +4,7 @@ saver@mrshaunwilson.com
 History
 ---
 
-[1.0.45]
+[1.0.50]
 * The version current on codeplex. CodePlex is an Open Source Developer Website @ http://www.codeplex.com/, I have elected to release the software code under the Microsoft Reciprocal License. Enjoy!
 
 [1.0.43]

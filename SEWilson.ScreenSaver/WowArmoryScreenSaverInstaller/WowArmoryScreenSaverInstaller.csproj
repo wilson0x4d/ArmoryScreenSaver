@@ -24,7 +24,7 @@
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
-    <PublishUrl>ftp://ftp.mrshaunwilson.com/screensaver/</PublishUrl>
+    <PublishUrl>C:\Workspaces\Builds\WowArmoryScreenSaver\ClickOnce\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -34,14 +34,14 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>http://www.mrshaunwilson.com/screensaver/</InstallUrl>
-    <UpdateUrl>http://www.mrshaunwilson.com/screensaver/</UpdateUrl>
+    <InstallUrl>http://www.mrshaunwilson.com/</InstallUrl>
+    <UpdateUrl>http://www.mrshaunwilson.com/</UpdateUrl>
     <ProductName>WoW Armory Screen Saver</ProductName>
     <PublisherName>Shaun Wilson</PublisherName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>43</ApplicationRevision>
-    <ApplicationVersion>1.0.0.43</ApplicationVersion>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
