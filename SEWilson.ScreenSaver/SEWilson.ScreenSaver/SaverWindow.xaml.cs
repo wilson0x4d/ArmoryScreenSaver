@@ -61,8 +61,9 @@ namespace SEWilson.ScreenSaver
 
         protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
         {
+            exitYet = true;
             base.OnClosing(e);
-            exitYet = !e.Cancel;
+            e.Cancel = false;
         }
 
         private void characterFeedService_CharacterAdvertised(object sender, SEWilson.ScreenSaver.P2P.CharacterFeedService.CharacterFeedEventArgs e)
@@ -251,16 +252,13 @@ namespace SEWilson.ScreenSaver
                         }
                         else
                         {
-                            if (!armoryMruHasBeenLoaded)
-                            {
-                                armoryMruHasBeenLoaded = true;
-                                LoadArmoryMRU();
-                            }
-                            else
-                            {
-                                Thread.Sleep(250);
-                            }
+                            Thread.Sleep(250);
                         }
+                    }
+                    if (!armoryMruHasBeenLoaded && !exitYet)
+                    {
+                        armoryMruHasBeenLoaded = true;
+                        LoadArmoryMRU();
                     }
                 }
             }

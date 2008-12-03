@@ -4,60 +4,35 @@ saver@mrshaunwilson.com
 History
 ---
 
-[1.0.1.5]
-* Eliminated the delay some users are eperiencing when exiting the screen saver.
-
-[1.0.1.2]
+[1.0.1]
+* Eliminated the delay some users are experiencing when exiting the screen saver. Peer Networking may still cause a short delay, I'll tweak the network timeouts soon.
+* Enforcing a 15 second delay before loading any armory data during screen saver start-up, and also deferring Peer Network init. This will give users a chance to cancel out of the screen saver without having to wait for network delays.
 * Corrected Build Numbers, changed Publish location, etc.
 * Fixed a bug in the Screen Saver "Preview Window" that would cause the preview to lag when checking for a Firewall.
 
-[1.0.0.50]
+[1.0.0]
 * The version current on codeplex. CodePlex is an Open Source Developer Website @ http://www.codeplex.com/, I have elected to release the software code under the Microsoft Reciprocal License. Enjoy!
-
-[1.0.0.43]
 * Fixed crash on screen saver settings dialog exit, introduced in last build.
 * Fixed issue where characters would sometimes load more than once.
 * Eliminating start-up delay caused by PNRP. Really, I need a central peer host instead of using PNRP, which would fix Peer Network for win2k/Win2k3 users and un-patch XP users.. but lack a colo. Anyone interested?
-
-[1.0.0.42]
 * Performing proper shutdown of character info worker thread, should resolve the sql worker thread abort issue.
-
-[1.0.0.41]
 * Fixed full-screen mode for non-Vista users (verified with win2k3 x64)
-
-[1.0.0.37]
 * Fixed Death Knight Character Sheets.
 * Re-publishing with SameSite redist, to help resolve deployment issues for some people.
-
-[1.0.0.34]
 * Added P2P sharing of Character Info, via WCF/PeerChannel/PNRP, with an option to disable the feature in the settings dialog. The feature is enabled by default, shared character info is not persisted locally.
 * Removed artificial delays from chracter info loader.
-
-[1.0.0.32]
 * Fixing crash on x64 machines.
 * Misc changes to tooltips.
 * Cache expiry is now 6 hours.
-
-[1.0.0.31]
 * Modified cache sdf path to "My Documents" as "wasscache.sdf"
 * Correcting bug with SDF schema mismatch, ensuring SDF reallocation on version change (temporary solution until I can get schema broken out into versioned sql scripts.)
-
-[1.0.0.23]
 * Displaying more details in item tooltips, including BoP-status and base stat bonuses. Needs clean-up, effects (Use:/Equip:) section, etc.
-
-[1.0.0.22]
 * Added "Character Info Mini Viewer" control, it is used for the Character List in the saver window. Slight visual artifacts, but functional.
-
-[1.0.0.21]
 * using SqlCe as a local cache for wowarmory data, and making it a prereq for install
 * enabling cache policy for item icons, seems janky, will only matter to users with intermittent internet access (laptops)
-
-[1.0.0.19]
 * Added changelog window.
 * Added offline resource cache for when wowarmory is too busy.
 * Decreased Refresh Rate of Armory Data.
-
-[1.0.0.10]
 * Fixed preview mode
 * Fixed fullscreen glitches
 * Added mute toggle for video playback
