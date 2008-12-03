@@ -4,6 +4,9 @@ saver@mrshaunwilson.com
 History
 ---
 
+[1.0.1.5]
+* Eliminated the delay some users are eperiencing when exiting the screen saver.
+
 [1.0.1.2]
 * Corrected Build Numbers, changed Publish location, etc.
 * Fixed a bug in the Screen Saver "Preview Window" that would cause the preview to lag when checking for a Firewall.
