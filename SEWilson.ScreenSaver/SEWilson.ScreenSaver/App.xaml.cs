@@ -80,7 +80,23 @@ namespace SEWilson.ScreenSaver
             {
                 saverWindow.EnableFullscreenMode();
             }
+            this.MainWindow.Closing += new System.ComponentModel.CancelEventHandler(MainWindow_Closing);
             this.MainWindow.Closed += new EventHandler(MainWindow_Closed);
+        }
+
+        void MainWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            // perform atmoic exit
+            lock (threadExitSignalListLock)
+            {
+                if (threadExitSignalList.Count > 0)
+                {
+                    System.Threading.ManualResetEvent.WaitAll(
+                        threadExitSignalList.ToArray(),
+                        30000,
+                        false);
+                }
+            }
         }
 
         [DllImport("user32.dll")]
@@ -99,18 +115,7 @@ namespace SEWilson.ScreenSaver
 
         void MainWindow_Closed(object sender, EventArgs e)
         {
-            // perform atmoic exit
-            lock (threadExitSignalListLock)
-            {
-                if (threadExitSignalList.Count > 0)
-                {
-                    System.Threading.ManualResetEvent.WaitAll(
-                        threadExitSignalList.ToArray(),
-                        30000,
-                        false);
-                }
-                Application.Current.Shutdown();
-            }
+            Application.Current.Shutdown();
         }
 
         private static IntPtr ExtractParentHwnd(StartupEventArgs e, int i)
