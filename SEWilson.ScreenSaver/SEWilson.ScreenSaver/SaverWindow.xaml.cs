@@ -228,7 +228,7 @@ namespace SEWilson.ScreenSaver
                     null);
 
                     long ts = DateTime.Now.Ticks;
-                    while (TimeSpan.FromTicks(DateTime.Now.Ticks - ts).TotalSeconds < 15)
+                    while ((TimeSpan.FromTicks(DateTime.Now.Ticks - ts).TotalSeconds < 15) && (!exitYet))
                     {
                         if (this.characterInfoLoadQueue.Count > 0)
                         {
