@@ -6,6 +6,7 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Interop;
 using System.Runtime.InteropServices;
+using System.Diagnostics;
 
 namespace SEWilson.ScreenSaver
 {
@@ -38,6 +39,25 @@ namespace SEWilson.ScreenSaver
                             break;
                         case "/p": // preview mode
                             {
+                                System.Threading.ManualResetEvent firewallUnblockThreadSignal = new System.Threading.ManualResetEvent(false);
+                                AddThreadExitSignal(firewallUnblockThreadSignal);
+                                (new System.Threading.Thread(() =>
+                                    {
+                                        // quick and dirty method of getting the user to authorize the service when windows firewall is enabled, this is called whenever the preview window is loaded
+                                        try
+                                        {
+                                            P2P.PeerDiscoveryService.Start();
+                                            P2P.CharacterFeedService characterFeedService = new SEWilson.ScreenSaver.P2P.CharacterFeedService();
+                                            characterFeedService.CreateChannel().Advertise("Thunderlord", "Shaan");
+                                            Application.Current.Shutdown();
+                                            return;
+                                        }
+                                        catch (Exception ex)
+                                        {
+                                            Debug.WriteLine(ex.Message + "|" + ex.StackTrace);
+                                        }
+                                        firewallUnblockThreadSignal.Set();
+                                    })).Start();
                                 parentHwnd = ExtractParentHwnd(e, i);
                                 this.MainWindow = new PreviewWindow();
                             }
