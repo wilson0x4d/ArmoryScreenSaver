@@ -1,0 +1,18 @@
+﻿<Window x:Class="SEWilson.ScreenSaver.PreviewWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ext="clr-namespace:System.Windows.Extensions"
+    Title="PreviewWindow" Height="137" Width="152"
+        Background="Black">
+    <ext:WindowChrome.WindowChrome>
+        <ext:WindowChrome 
+            CaptionHeight="0" 
+            ClientBorderThickness="0" 
+            RoundCorners="False"
+            UseGlassFrame="False"
+            />
+    </ext:WindowChrome.WindowChrome>
+    <Grid>
+        <Image Source="/wowarmory;component/armory_promo.png" Stretch="Uniform"/>
+    </Grid>
+</Window>

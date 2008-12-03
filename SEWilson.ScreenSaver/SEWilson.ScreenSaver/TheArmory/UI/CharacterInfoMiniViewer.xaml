@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="SEWilson.ScreenSaver.TheArmory.UI.CharacterInfoMiniViewer"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Height="58" Width="240"
+    Background="#422222">          
+    <Grid>
+        <Image Margin="8,8,0,0" Name="imageFactionIcon" Stretch="Fill" HorizontalAlignment="Left" Width="20" Source="/wowarmory;component/TheArmory/Art/Faction/Horde.jpg" Height="20" VerticalAlignment="Top" />
+        <StackPanel Orientation="Vertical" Margin="34,8,4,0">
+            <TextBlock Text="{Binding Name}" Foreground="White" FontFamily="Tahoma"  FontSize="18" FontWeight="Bold" VerticalAlignment="Top" />
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding Level}" FontFamily="Verdana" FontSize="10" Foreground="Chartreuse" />
+                <TextBlock Text=" " FontFamily="Verdana" FontSize="10" Foreground="Chartreuse" />
+                <TextBlock Text="{Binding Race}" FontFamily="Verdana" FontSize="10" Foreground="Chartreuse" />
+                <TextBlock Text=" " FontFamily="Verdana" FontSize="10" Foreground="Chartreuse" />
+                <TextBlock Text="{Binding Class}" FontFamily="Verdana" FontSize="10" Foreground="Chartreuse" />
+            </StackPanel>
+            <TextBlock Text="{Binding Realm}" FontFamily="Verdana" FontSize="8" Foreground="Orange" VerticalAlignment="Top" />
+        </StackPanel>
+        <Image HorizontalAlignment="Left" Margin="8,0,0,4" Name="imageClassIcon" Source="/wowarmory;component/TheArmory/Art/Class/Warlock.png" Stretch="Fill" Width="20" Height="20" VerticalAlignment="Bottom" />
+    </Grid>
+</UserControl>

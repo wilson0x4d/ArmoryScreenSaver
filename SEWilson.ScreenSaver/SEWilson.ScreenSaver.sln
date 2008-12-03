@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SEWilson.ScreenSaver", "SEWilson.ScreenSaver\SEWilson.ScreenSaver.csproj", "{661F2DCA-106A-4BE7-B74E-13DD09DB4AD6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WowArmoryScreenSaverInstaller", "WowArmoryScreenSaverInstaller\WowArmoryScreenSaverInstaller.csproj", "{B9B46392-183F-4DAC-A482-CF3DDDF9F518}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs03.codeplex.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = SEWilson.ScreenSaver\\SEWilson.ScreenSaver.csproj
+		SccProjectName1 = SEWilson.ScreenSaver
+		SccLocalPath1 = SEWilson.ScreenSaver
+		SccProjectUniqueName2 = WowArmoryScreenSaverInstaller\\WowArmoryScreenSaverInstaller.csproj
+		SccProjectName2 = WowArmoryScreenSaverInstaller
+		SccLocalPath2 = WowArmoryScreenSaverInstaller
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{661F2DCA-106A-4BE7-B74E-13DD09DB4AD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{661F2DCA-106A-4BE7-B74E-13DD09DB4AD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{661F2DCA-106A-4BE7-B74E-13DD09DB4AD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{661F2DCA-106A-4BE7-B74E-13DD09DB4AD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9B46392-183F-4DAC-A482-CF3DDDF9F518}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9B46392-183F-4DAC-A482-CF3DDDF9F518}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9B46392-183F-4DAC-A482-CF3DDDF9F518}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9B46392-183F-4DAC-A482-CF3DDDF9F518}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

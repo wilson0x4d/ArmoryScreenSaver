@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/layout/item-info.xsl"?>
+<page globalSearch="1" lang="en_us" requestQuery="i=20830" requestUrl="/item-info.xml">
+  <itemInfo>
+    <item icon="inv_jewelry_necklace_11" id="20830" level="30" name="Amulet of the Moon" quality="2" type="Miscellaneous">
+      <cost sellPrice="1535"/>
+      <disenchantLoot requiredSkillRank="50">
+        <item dropRate="3" icon="inv_enchant_essenceastrallarge" id="11082" level="25" maxCount="2" minCount="1" name="Greater Astral Essence" quality="2" type="Enchanting"/>
+        <item dropRate="5" icon="inv_enchant_dustsoul" id="11083" level="25" maxCount="2" minCount="1" name="Soul Dust" quality="1" type="Enchanting"/>
+        <item dropRate="2" icon="inv_enchant_shardglimmeringlarge" id="11084" level="25" maxCount="1" minCount="1" name="Large Glimmering Shard" quality="3" type="Enchanting"/>
+      </disenchantLoot>
+      <createdBy>
+        <spell icon="trade_engineering" id="25339" name="Amulet of the Moon">
+          <reagent count="2" icon="inv_misc_gem_crystal_01" id="1705" name="Lesser Moonstone"/>
+          <reagent count="1" icon="inv_jewelcrafting_bronzesetting" id="20817" name="Bronze Setting"/>
+        </spell>
+      </createdBy>
+    </item>
+  </itemInfo>
+</page>
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/layout/item-info.xsl"?>
+<page globalSearch="1" lang="en_us" requestQuery="i=10405" requestUrl="/item-info.xml">
+  <itemInfo>
+    <item icon="inv_shoulder_27" id="10405" level="22" name="Bandit Shoulders" quality="1" type="Leather">
+      <cost sellPrice="409"/>
+    </item>
+  </itemInfo>
+</page>
