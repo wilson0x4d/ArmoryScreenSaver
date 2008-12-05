@@ -36,11 +36,12 @@
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>http://www.mrshaunwilson.com/</InstallUrl>
     <UpdateUrl>http://www.mrshaunwilson.com/</UpdateUrl>
+    <SupportUrl>http://www.codeplex.com/wowarmoryscreensaver</SupportUrl>
     <ProductName>WoW Armory Screen Saver</ProductName>
     <PublisherName>Shaun Wilson</PublisherName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>8</ApplicationRevision>
+    <ApplicationRevision>10</ApplicationRevision>
     <ApplicationVersion>1.0.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>

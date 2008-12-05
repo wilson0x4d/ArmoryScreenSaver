@@ -112,6 +112,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Util\UI\ExceptionInspectorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -170,6 +174,9 @@
     <Compile Include="TheArmory\UI\StringIsNullOrEmptyVisibilityConverter.cs" />
     <Compile Include="Util\RequestInspectorWindow.xaml.cs">
       <DependentUpon>RequestInspectorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Util\UI\ExceptionInspectorWindow.xaml.cs">
+      <DependentUpon>ExceptionInspectorWindow.xaml</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

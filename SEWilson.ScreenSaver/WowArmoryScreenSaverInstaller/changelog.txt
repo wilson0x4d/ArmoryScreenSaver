@@ -5,6 +5,7 @@ History
 ---
 
 [1.0.1]
+* Added Error Reporting dialog, which will let users more easily copy error details to the clipboard, and also offers a feature to send the error report directly.
 * Eliminated the delay some users are experiencing when exiting the screen saver. Peer Networking may still cause a short delay, I'll tweak the network timeouts soon.
 * Enforcing a 15 second delay before loading any armory data during screen saver start-up, and also deferring Peer Network init. This will give users a chance to cancel out of the screen saver without having to wait for network delays.
 * Corrected Build Numbers, changed Publish location, etc.
