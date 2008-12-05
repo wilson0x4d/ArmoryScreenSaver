@@ -66,13 +66,6 @@
                HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
                Foreground="#222222" Width="Auto"
                MouseUp="label2_MouseUp" ToolTip="Click Here to Skip a Video">∞</Label>
-        <CheckBox Foreground="Chartreuse" 
-                  Grid.Row="1" Height="Auto" Margin="22,0,136,26" 
-                  Name="checkMuteAudio" IsChecked="True" 
-                  VerticalAlignment="Bottom"
-                  HorizontalAlignment="Left"
-                  Checked="checkBox1_Checked"
-                  Unchecked="checkBox1_Unchecked">Mute</CheckBox>
         <TextBlock Grid.Column="2" Grid.Row="1" Height="21" Margin="6,0,49,33" Name="textBlock3" VerticalAlignment="Bottom" Text="{Binding mediaElement1}" />
         <ListBox Name="listCharacterSheets" ItemsSource="{Binding}" BorderThickness="0" Foreground="White" Background="Transparent" SelectionMode="Single" Padding="8" Grid.Column="2" HorizontalContentAlignment="Right" Margin="0,69,12,66" Grid.Row="1" HorizontalAlignment="Right" Width="260">
             <ListBox.ItemTemplate>
@@ -81,5 +74,6 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+        <CheckBox Foreground="Chartreuse" Grid.Row="1" Height="15.96" Margin="25,0,6,35.04" Name="checkMuteAudio" IsChecked="True" VerticalAlignment="Bottom" Checked="checkBox1_Checked" Unchecked="checkBox1_Unchecked">Mute Audio during Video Playback</CheckBox>
     </Grid>
 </Window>
