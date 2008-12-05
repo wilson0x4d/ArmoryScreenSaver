@@ -226,6 +226,10 @@ namespace SEWilson.ScreenSaver.TheArmory
         public static void PopulateCharacterData(XDocument xdocument, CharacterInfo characterSheet)
         {
             XElement xelement = xdocument.XPathSelectElement("/page/characterInfo/character");
+            if (xelement == null)
+            {
+                throw new Exception("characterInfo either invalid, mal-formatted, or the requested character could not be found.", xdocument != null ? new Exception("xml=" + xdocument.ToString()) : null);
+            }
             foreach (XAttribute attribute in xelement.Attributes())
             {
                 switch (attribute.Name.LocalName)
