@@ -251,7 +251,7 @@ namespace SEWilson.ScreenSaver.Caching
             }
             catch (Exception ex)
             {
-                System.Windows.MessageBox.Show(ex.Message + "|" + ex.StackTrace);
+                Util.UI.ExceptionInspectorWindow.Inspect(ex);
             }
         }
 

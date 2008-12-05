@@ -1,0 +1,12 @@
+﻿<Window x:Class="SEWilson.ScreenSaver.Util.UI.ExceptionInspectorWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Screen Saver - Error Reporting" Height="340" Width="500" Topmost="True">
+    <Grid>
+        <Button Height="23" HorizontalAlignment="Right" Margin="0,0,12,12" Name="buttonSendErrorReport" VerticalAlignment="Bottom" Width="128" IsDefault="True" Click="buttonSendErrorReport_Click">Send Error Report</Button>
+        <TextBlock TextWrapping="Wrap" Height="21" Margin="12,12,12,0" Name="textBlock1" VerticalAlignment="Top" Text="{Binding Message}"/>
+        <TextBlock TextWrapping="Wrap" Margin="12,39,12,41" Name="textBlock2"  Text="{Binding StackTrace}"/>
+        <Button Height="23" HorizontalAlignment="Left" Margin="12,0,0,12" Name="buttonCopyToClipboard" VerticalAlignment="Bottom" Width="128" Click="buttonCopyToClipboard_Click">Copy to Clipboard</Button>
+        <Button Height="23" Margin="0,0,146,12" Name="buttonCancel" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="65" IsCancel="True" Click="buttonCancel_Click">Cancel</Button>
+    </Grid>
+</Window>

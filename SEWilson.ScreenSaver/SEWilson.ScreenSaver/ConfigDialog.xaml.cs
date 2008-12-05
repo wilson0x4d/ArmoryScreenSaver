@@ -13,6 +13,7 @@ using System.Windows.Shapes;
 using System.Xml.Linq;
 using System.Xml.XPath;
 using SEWilson.ScreenSaver.TheArmory;
+using System.Diagnostics;
 
 namespace SEWilson.ScreenSaver
 {
@@ -77,7 +78,8 @@ namespace SEWilson.ScreenSaver
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message + Environment.NewLine + ex.StackTrace, "Character Lookup Failed!", MessageBoxButton.OK, MessageBoxImage.Error);
+                Debug.WriteLine(ex.Message + Environment.NewLine + ex.StackTrace);
+                Util.UI.ExceptionInspectorWindow.Inspect(ex);
             }
         }
 
