@@ -178,36 +178,49 @@ namespace SEWilson.ScreenSaver.TheArmory
 
         private void LoadItemImage(bool useCacheOnly)
         {
-            try
+            App.Current.Dispatcher.BeginInvoke((ThreadStart)delegate()
             {
-                string wassImageCachePath = System.IO.Path.Combine(
-                    Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
-                    @".wass\wow-icons\_images\64x64\");
-
-                if (!System.IO.Directory.Exists(wassImageCachePath))
+                string iconCachePath = "";
+                try
                 {
-                    System.IO.Directory.CreateDirectory(wassImageCachePath);
-                }
+                    string wassImageCachePath = System.IO.Path.Combine(
+                        Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
+                        @".wass\wow-icons\_images\64x64\");
 
-                string iconCachePath = System.IO.Path.Combine(wassImageCachePath, Icon + ".jpg");
+                    if (!System.IO.Directory.Exists(wassImageCachePath))
+                    {
+                        System.IO.Directory.CreateDirectory(wassImageCachePath);
+                    }
 
-                if (System.IO.Directory.Exists(iconCachePath))
-                {
-                    Uri itemInfoIconUri = new Uri(iconCachePath, UriKind.Absolute);
-                    ItemImage = new System.Windows.Media.Imaging.BitmapImage(itemInfoIconUri);
+                    iconCachePath = System.IO.Path.Combine(wassImageCachePath, Icon + ".jpg");
+
+                    if (System.IO.File.Exists(iconCachePath))
+                    {
+                        try
+                        {
+                            Uri iconCachePathUri = new Uri(iconCachePath);
+                            System.Windows.Media.Imaging.BitmapImage image = new System.Windows.Media.Imaging.BitmapImage(iconCachePathUri);
+                            ItemImage = image;
+                        }
+                        catch (Exception ex2)
+                        {
+                            ItemImage = null;
+                            if (System.IO.File.Exists(iconCachePath))
+                                System.IO.File.Delete(iconCachePath);
+                        }
+                    }
+                    if ((ItemImage == null) && (!useCacheOnly))
+                    {
+                        System.Net.WebClient webClient = new System.Net.WebClient();
+                        webClient.DownloadFileCompleted += new AsyncCompletedEventHandler(webClient_DownloadFileCompleted);
+                        webClient.DownloadFileAsync(IconUri, iconCachePath);
+                    }
                 }
-                else if (!useCacheOnly)
+                catch (Exception ex)
                 {
-                    System.Net.WebClient webClient = new System.Net.WebClient();
-                    webClient.BaseAddress = IconUri.ToString();
-                    webClient.DownloadFileCompleted += new AsyncCompletedEventHandler(webClient_DownloadFileCompleted);
-                    webClient.DownloadFileAsync(IconUri, iconCachePath);
+                    Debug.WriteLine(ex.Message + "|" + ex.StackTrace);
                 }
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex.Message + "|" + ex.StackTrace);
-            }
+            }, null);
         }
 
         void webClient_DownloadFileCompleted(object sender, AsyncCompletedEventArgs e)
