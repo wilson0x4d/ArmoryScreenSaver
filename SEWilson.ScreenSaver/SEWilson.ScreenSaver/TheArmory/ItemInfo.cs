@@ -93,14 +93,20 @@ namespace SEWilson.ScreenSaver.TheArmory
                 {
                     icon = value;
                     OnPropertyChanged("IconUri");
-                    LoadItemImageAsync();
+                    LoadItemImage(false);
                 }
             }
         }
 
         private string icon;
 
-        public Uri IconUri { get { return new Uri(string.Format("http://www.wowarmory.com/wow-icons/_images/64x64/{0}.jpg", Icon)); } }
+        public Uri IconUri
+        {
+            get
+            {
+                return new Uri(string.Format("http://www.wowarmory.com/wow-icons/_images/64x64/{0}.jpg", Icon));
+            }
+        }
 
         public System.Windows.Media.Imaging.BitmapImage ItemImage
         {
@@ -170,30 +176,43 @@ namespace SEWilson.ScreenSaver.TheArmory
         {
         }
 
-        private void LoadItemImageAsync()
-        {
-            System.Windows.Threading.Dispatcher.CurrentDispatcher.BeginInvoke((ThreadStart)LoadItemImage, null);
-        }
-
-        private void LoadItemImage()
+        private void LoadItemImage(bool useCacheOnly)
         {
             try
             {
-                Uri itemInfoIconUri = IconUri;
+                string wassImageCachePath = System.IO.Path.Combine(
+                    Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
+                    @".wass\wow-icons\_images\64x64\");
 
-                System.Net.Cache.RequestCachePolicy cachepolicy = new System.Net.Cache.RequestCachePolicy(System.Net.Cache.RequestCacheLevel.CacheIfAvailable);
-                this.ItemImage = new System.Windows.Media.Imaging.BitmapImage(itemInfoIconUri, cachepolicy);
+                if (!System.IO.Directory.Exists(wassImageCachePath))
+                {
+                    System.IO.Directory.CreateDirectory(wassImageCachePath);
+                }
+
+                string iconCachePath = System.IO.Path.Combine(wassImageCachePath, Icon + ".jpg");
+
+                if (System.IO.Directory.Exists(iconCachePath))
+                {
+                    Uri itemInfoIconUri = new Uri(iconCachePath, UriKind.Absolute);
+                    ItemImage = new System.Windows.Media.Imaging.BitmapImage(itemInfoIconUri);
+                }
+                else if (!useCacheOnly)
+                {
+                    System.Net.WebClient webClient = new System.Net.WebClient();
+                    webClient.BaseAddress = IconUri.ToString();
+                    webClient.DownloadFileCompleted += new AsyncCompletedEventHandler(webClient_DownloadFileCompleted);
+                    webClient.DownloadFileAsync(IconUri, iconCachePath);
+                }
             }
             catch (Exception ex)
             {
-                // TODO use default image or drawing?
                 Debug.WriteLine(ex.Message + "|" + ex.StackTrace);
             }
         }
 
-        void ItemImage_DownloadFailed(object sender, ExceptionEventArgs e)
+        void webClient_DownloadFileCompleted(object sender, AsyncCompletedEventArgs e)
         {
-            this.ItemImage = new System.Windows.Media.Imaging.BitmapImage(new Uri("404_64.png"));
+            LoadItemImage(true);
         }
 
         #region INotifyPropertyChanged Members
