@@ -15,7 +15,7 @@
             </Style>
         </Grid.Resources>
         <Image Stretch="Fill"
-               Source="{Binding IconUri}"
+               Source="{Binding ItemImage}"
                >
             <Image.ToolTip>
                     <Border BorderThickness="3"
