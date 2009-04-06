@@ -4,6 +4,11 @@ saver@mrshaunwilson.com
 History
 ---
 
+[1.0.2]
+* Fixed a Realm Name bug that would prevent character sheets from loading.
+* Switched Target Platform to AnyCPU, since X64 machines were unable to load proper codecs for video playback.
+* Republished.
+
 [1.0.1]
 * Reworked Image Icon Caching, since WPF's BitmapImage request caching appears non-persistent and short-lived.
 * Added Error Reporting dialog, which will let users more easily copy error details to the clipboard, and also offers a feature to send the error report directly.
