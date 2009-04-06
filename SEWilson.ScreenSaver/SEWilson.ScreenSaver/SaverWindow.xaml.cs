@@ -134,7 +134,8 @@ namespace SEWilson.ScreenSaver
             P2P.ICharacterFeedChannel characterFeedChannel = this.characterFeedService.CreateChannel();
             foreach (string characterName in characterList)
             {
-                string[] parts = characterName.Replace("[", "").Replace("]", "").Trim().Split(' ');
+                string[] parts = characterName.Trim().Split(']');
+                parts[0] = parts[0].Trim(' ', '[', ']');
                 Debug.WriteLine(string.Format("Enqueue: MRU: realm={0} name={1}", parts[0], parts[1]));
                 this.characterInfoLoadQueue.Enqueue(new string[] { parts[0], parts[1] });
                 try
