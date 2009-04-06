@@ -24,7 +24,7 @@
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
-    <PublishUrl>C:\Workspaces\Builds\WowArmoryScreenSaver\ClickOnce\</PublishUrl>
+    <PublishUrl>C:\Workspaces\MrShaunWilson\WASS\WASS_Installer\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -34,20 +34,17 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>http://www.mrshaunwilson.com/</InstallUrl>
-    <UpdateUrl>http://www.mrshaunwilson.com/</UpdateUrl>
-    <SupportUrl>http://www.codeplex.com/wowarmoryscreensaver</SupportUrl>
+    <InstallUrl>http://www.mrshaunwilson.com/WASS/WASS_Installer/</InstallUrl>
+    <SupportUrl>http://wowarmoryscreensaver.codeplex.com/</SupportUrl>
     <ProductName>WoW Armory Screen Saver</ProductName>
     <PublisherName>Shaun Wilson</PublisherName>
-    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
-    <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>14</ApplicationRevision>
-    <ApplicationVersion>1.0.1.%2a</ApplicationVersion>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.2.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <ExcludeDeploymentUrl>true</ExcludeDeploymentUrl>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <BootstrapperComponentsLocation>Relative</BootstrapperComponentsLocation>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
