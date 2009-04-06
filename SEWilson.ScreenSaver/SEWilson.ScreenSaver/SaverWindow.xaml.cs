@@ -136,6 +136,7 @@ namespace SEWilson.ScreenSaver
             {
                 string[] parts = characterName.Trim().Split(']');
                 parts[0] = parts[0].Trim(' ', '[', ']');
+                parts[1] = parts[1].Trim();
                 Debug.WriteLine(string.Format("Enqueue: MRU: realm={0} name={1}", parts[0], parts[1]));
                 this.characterInfoLoadQueue.Enqueue(new string[] { parts[0], parts[1] });
                 try
